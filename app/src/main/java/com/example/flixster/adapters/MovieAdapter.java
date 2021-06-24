@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -38,7 +39,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Log.d("MovieAdapter", "onCreateViewHolder");
-        binding = ItemMovieBinding.inflate(getLayoutInflater(), parent, false);
+        binding = ItemMovieBinding.inflate(LayoutInflater.from(context), parent, false);
         View view = binding.getRoot();
         return new ViewHolder(view);
     }
