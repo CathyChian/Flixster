@@ -25,7 +25,7 @@ The following **stretch** features are implemented:
 The following **additional** features are implemented:
 
 * [x] Action bar changes when looking at movie details
-* [x] Movie details also includes numerical rating next to the rating bar
+* [x] Movie details includes numerical rating next to the rating bar
 
 ## Video Walkthrough
 
