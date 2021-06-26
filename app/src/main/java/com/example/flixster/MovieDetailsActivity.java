@@ -62,7 +62,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
                 .transform(new RoundedCornersTransformation(10, 0))
                 .into(binding.ivVideo);
 
-        String videoURL = "https://api.themoviedb.org/3/movie/" + movie.getId() + "/videos?api_key=f7d579ec57d523da9eb0abb0be875858";
+        String videoURL = "https://api.themoviedb.org/3/movie/" + movie.getId() + "/videos?api_key=" + getString(R.string.now_playing_key);
 
         AsyncHttpClient client = new AsyncHttpClient();
         client.get(videoURL, new JsonHttpResponseHandler() {

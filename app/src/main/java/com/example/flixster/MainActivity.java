@@ -25,7 +25,6 @@ import okhttp3.Headers;
 
 public class MainActivity extends AppCompatActivity {
 
-    public static final String NOW_PLAYING_URL = "https://api.themoviedb.org/3/movie/now_playing?api_key=f7d579ec57d523da9eb0abb0be875858";
     public static final String TAG = "MainActivity";
 
     List<Movie> movies;
@@ -38,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         View view = binding.getRoot();
         setContentView(view);
 
+        String nowPlayingURL = "https://api.themoviedb.org/3/movie/now_playing?api_key=" + getString(R.string.now_playing_key);
         getSupportActionBar().setTitle("Flixster: Now Playing");
 
         movies = new ArrayList<>();
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         binding.rvMovies.setLayoutManager(new LinearLayoutManager(this));
 
         AsyncHttpClient client = new AsyncHttpClient();
-        client.get(NOW_PLAYING_URL, new JsonHttpResponseHandler() {
+        client.get(nowPlayingURL, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int i, Headers headers, JSON json) {
                 Log.d(TAG, "onSuccess");
